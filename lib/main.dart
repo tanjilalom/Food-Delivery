@@ -1,5 +1,3 @@
-import 'package:deliveryapp_ui/screen/categories.dart';
-import 'package:deliveryapp_ui/screen/checkout.dart';
 import 'package:deliveryapp_ui/screen/homescreen.dart';
 import 'package:deliveryapp_ui/screen/splashscreen.dart';
 import 'package:flutter/material.dart';
