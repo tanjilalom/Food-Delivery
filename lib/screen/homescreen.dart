@@ -1,6 +1,6 @@
 import 'package:deliveryapp_ui/screen/categories.dart';
 import 'package:deliveryapp_ui/screen/checkout.dart';
-import 'package:deliveryapp_ui/screen/vegetables.dart';
+import 'package:deliveryapp_ui/screen/payment.dart';
 import 'package:flutter/material.dart';
 
 
@@ -18,7 +18,7 @@ class _homepageState extends State<homepage> {
   final pages = [
     Categories(),
     Checkout(),
-    Checkout(),
+    Payment_page(),
   ];
 
 
