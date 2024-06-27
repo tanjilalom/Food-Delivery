@@ -1,5 +1,4 @@
 import 'package:deliveryapp_ui/model/category_model.dart';
-import 'package:deliveryapp_ui/screen/homescreen.dart';
 import 'package:deliveryapp_ui/screen/vegetables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

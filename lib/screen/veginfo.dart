@@ -11,7 +11,7 @@ class Veginfo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset('assets/romaine-lettuce.jpg'),
+          Image.asset('assets/product/Vegetables/romaine-lettuce.jpg'),
           Expanded(
             child: Container(
               width: double.infinity,
@@ -30,7 +30,7 @@ class Veginfo extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      'Boston Lettuce',
+                      'Romaine Lettuce',
                       style:
                           TextStyle(fontWeight: FontWeight.w600, fontSize: 30),
                     ),
@@ -38,7 +38,7 @@ class Veginfo extends StatelessWidget {
                       height: 20,
                     ),
                     Text(
-                      "1.10/piece",
+                      "1.10€/kg",
                       style:
                           TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                     ),
@@ -48,7 +48,7 @@ class Veginfo extends StatelessWidget {
                     Text(
                       '~ 150 gr / piece',
                       style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18, color: Colors.teal),
                     ),
                     SizedBox(
                       height: 20,

@@ -1,3 +1,4 @@
+import 'package:deliveryapp_ui/model/vegname_model.dart';
 import 'package:deliveryapp_ui/screen/veginfo.dart';
 import 'package:deliveryapp_ui/widget/filter_chip_widget.dart';
 import 'package:flutter/cupertino.dart';
@@ -40,8 +41,9 @@ class _VegetablesState extends State<Vegetables> {
 
             Expanded(
               child: ListView.builder(
-                itemCount: 8,
+                itemCount: vegetable.length,
                 itemBuilder: (BuildContext context, int index) {
+                  var itemname = vegetable[index];
                   return Padding(
                     padding: EdgeInsets.symmetric(vertical: 12),
                     child: InkWell(
@@ -52,7 +54,6 @@ class _VegetablesState extends State<Vegetables> {
                         //color: Colors.purple[100],
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          //color: Colors.deepPurple
                         ),
                         child: Row(
                           children: [
@@ -60,18 +61,9 @@ class _VegetablesState extends State<Vegetables> {
                               child: ClipRRect(
                                 borderRadius: BorderRadius.circular(20), // Image border
                                 child: SizedBox.fromSize(
-                                  child: Image.asset('assets/romaine-lettuce.jpg', fit: BoxFit.cover),
+                                  child: Image.asset(itemname.image, fit: BoxFit.cover),
                                 ),
                               ),
-                              /*child: Container(
-                                child: Image.asset('assets/romaine-lettuce.jpg'),
-                                //child: Image.asset('assets/romaine-lettuce.jpg'),
-                                //width: MediaQuery.sizeOf(context).width/3,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(30),
-                                  color: Colors.deepPurple,
-                                ),
-                              ),*/
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 12.0, right: 12.0),
@@ -80,12 +72,12 @@ class _VegetablesState extends State<Vegetables> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Text(
-                                    'Boston Lettuce',
+                                    itemname.name,
                                     style: TextStyle(
                                         fontWeight: FontWeight.w600,
                                         fontSize: 20),
                                   ),
-                                  Text("1.10/piece",
+                                  Text(itemname.price,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 18)),
