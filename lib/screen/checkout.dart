@@ -9,6 +9,8 @@ class Checkout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Checkout'),
+        centerTitle: true,
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(CupertinoIcons.back),
@@ -20,15 +22,31 @@ class Checkout extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text('Payment method'), Text('CHANGE')],
+              children: [
+                Text(
+                  'Payment method',
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                ),
+                Text('CHANGE'),
+              ],
             ),
+            SizedBox(height: 8, ),
             Row(
-              children: [Icon(Icons.credit_card), Text('**** **** **** 4747')],
+              children: [
+                Icon(Icons.credit_card),
+                SizedBox(width: 8,),
+                Text('**** **** **** 4747'),
+              ],
             ),
+            SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text('Delivery address'), Text('CHANGE')],
+              children: [
+                Text('Delivery address', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
+                Text('CHANGE'),
+              ],
             ),
+            SizedBox(height: 8,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -43,9 +61,13 @@ class Checkout extends StatelessWidget {
                 )
               ],
             ),
+            SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text('Delivery option'), Text('CHANGE')],
+              children: [
+                Text('Delivery option', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
+                Text('CHANGE'),
+              ],
             ),
             Expanded(
               child: ListView.builder(
