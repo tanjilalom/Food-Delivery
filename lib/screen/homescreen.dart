@@ -17,7 +17,7 @@ class _homepageState extends State<homepage> {
   var _currentindex = 0;
   final pages = [
     Categories(),
-    Vegetables(),
+    Checkout(),
     Checkout(),
   ];
 
@@ -35,7 +35,7 @@ class _homepageState extends State<homepage> {
                   backgroundColor: Colors.pinkAccent,
                   icon: Icon(Icons.home), label: "Home"),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.store), label: "Store"),
+                  icon: Icon(Icons.shopping_cart), label: "Checkout"),
               BottomNavigationBarItem(
                   icon: Icon(Icons.person), label: "Profile"),
             ],
