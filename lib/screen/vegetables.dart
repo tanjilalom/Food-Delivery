@@ -23,13 +23,13 @@ class _VegetablesState extends State<Vegetables> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Vegetables',
-              style: TextStyle(fontSize: 35),
+              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
             ),
             SearchBar(
               leading: Icon(Icons.search),
@@ -46,85 +46,75 @@ class _VegetablesState extends State<Vegetables> {
                   var itemname = vegetable[index];
                   return Padding(
                     padding: EdgeInsets.symmetric(vertical: 12),
-                    child: InkWell(
-                      onTap: () => Get.to(Veginfo()),
-                      borderRadius: BorderRadius.circular(8),
-                      child: Container(
-                        height: 150,
-                        //color: Colors.purple[100],
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(20), // Image border
-                                child: SizedBox.fromSize(
-                                  child: Image.asset(itemname.image, fit: BoxFit.cover),
-                                ),
+                    child: Container(
+                      height: 160,
+                      //color: Colors.purple[100],
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.deepPurple
+                      ),
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: () => Get.to(Veginfo()),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(8), // Image border
+                              child: SizedBox.fromSize(
+                                child: Image.asset(itemname.image, fit: BoxFit.cover, height: 128, width: 177,),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 12.0, right: 12.0),
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    itemname.name,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(top: 16, left: 12.0,),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  itemname.name,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w600,
+                                      fontSize: 20),
+                                ),
+                                Text(itemname.price,
                                     style: TextStyle(
                                         fontWeight: FontWeight.w600,
-                                        fontSize: 20),
-                                  ),
-                                  Text(itemname.price,
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w600,
-                                          fontSize: 18)),
-                                  Row(
-                                    children: [
-                                      Container(
-                                        height: 45,
-                                        child: Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Container(
-                                              height: 45,
-                                              width: 65,
-                                              child: Icon(CupertinoIcons.heart),
-                                              decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                            ),
-                                            SizedBox(
-                                              width: 15,
-                                            ),
-                                            Container(
-                                              height: 45,
-                                              width: 65,
-                                              child: Icon(CupertinoIcons.cart),
-                                              decoration: BoxDecoration(
-                                                  color: Colors.blue,
-                                                  border: Border.all(
-                                                      color: Colors.black),
-                                                  borderRadius:
-                                                      BorderRadius.all(
-                                                          Radius.circular(10))),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
+                                        fontSize: 18)),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Container(
+                                      height: 40,
+                                      width: 78,
+                                      child: Icon(CupertinoIcons.heart),
+                                      decoration: BoxDecoration(
+                                          border: Border.all(
+                                              color: Colors.black),
+                                          borderRadius:
+                                              BorderRadius.all(
+                                                  Radius.circular(10))),
+                                    ),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    Container(
+                                      height: 40,
+                                      width: 78,
+                                      child: Icon(CupertinoIcons.cart),
+                                      decoration: BoxDecoration(
+                                          color: Colors.blue,
+                                          border: Border.all(
+                                              color: Colors.black),
+                                          borderRadius:
+                                              BorderRadius.all(
+                                                  Radius.circular(10))),
+                                    ),
+                                  ],
+                                )
+                              ],
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   );

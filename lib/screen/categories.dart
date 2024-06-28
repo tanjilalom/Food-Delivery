@@ -7,9 +7,14 @@ import 'package:get/get.dart';
 class Categories extends StatelessWidget {
   Categories({super.key});
 
-
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+
+    /*24 is for notification bar on Android*/
+    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
+    final double itemWidth = size.width / 2;
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -18,13 +23,13 @@ class Categories extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Categories',
-              style: TextStyle(fontSize: 35),
+              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
             ),
             SearchBar(
               leading: Icon(Icons.search),
@@ -36,53 +41,62 @@ class Categories extends StatelessWidget {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
+                  childAspectRatio: MediaQuery.of(context).size.width /
+                      (MediaQuery.of(context).size.height / 1.8),
                 ),
                 itemCount: category.length,
                 itemBuilder: (BuildContext context, int index) {
                   var itemname = category[index];
                   return Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: InkWell(
-                      onTap: ()=> Get.to(Vegetables()),
-                      child: Container(
-                        height: 100,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.deepPurple[100],
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Expanded(
+                    child: Container(
+                      height: 100,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.deepPurple[100],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Expanded(
+                            child: InkWell(
+                              onTap: () => Get.to(Vegetables()),
                               child: ClipRRect(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
                                     topRight: Radius.circular(10)),
                                 // Image border
                                 child: SizedBox.fromSize(
-                                  child: Image.asset(
-                                      itemname.image,
+                                  child: Image.asset(itemname.image,
                                       fit: BoxFit.cover),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 10,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 16.0),
+                            child: Text(
+                              itemname.name,
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w700),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 12.0),
-                              child: Text(itemname.name),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.only(left: 16.0),
+                            child: Text('('+
+                              itemname.stock.toString()+')',
+                              style: TextStyle(
+                                  fontSize: 12, fontWeight: FontWeight.w400),
                             ),
-                            Padding(
-                              padding: EdgeInsets.only(left: 12.0),
-                              child: Text(itemname.stock.toString()),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                          ],
-                        ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                        ],
                       ),
                     ),
                   );
