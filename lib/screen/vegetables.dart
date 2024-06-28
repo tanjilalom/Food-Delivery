@@ -38,78 +38,92 @@ class _VegetablesState extends State<Vegetables> {
               height: 30,
             ),
             FilterChipWidget(),
-
             Expanded(
               child: ListView.builder(
                 itemCount: vegetable.length,
                 itemBuilder: (BuildContext context, int index) {
                   var itemname = vegetable[index];
                   return Padding(
-                    padding: EdgeInsets.symmetric(vertical: 12),
+                    padding: EdgeInsets.symmetric(vertical: 5),
                     child: Container(
                       height: 160,
-                      //color: Colors.purple[100],
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.deepPurple
-                      ),
                       child: Row(
                         children: [
                           InkWell(
                             onTap: () => Get.to(Veginfo()),
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(8), // Image border
+                              borderRadius: BorderRadius.circular(8),
                               child: SizedBox.fromSize(
-                                child: Image.asset(itemname.image, fit: BoxFit.cover, height: 128, width: 177,),
+                                child: Image.asset(
+                                  itemname.image,
+                                  fit: BoxFit.cover,
+                                  height: 128,
+                                  width: 177,
+                                ),
                               ),
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsets.only(top: 16, left: 12.0,),
+                            padding: EdgeInsets.only(
+                              top: 16,
+                              left: 12.0,
+                            ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 Text(
                                   itemname.name,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 20),
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 18,
+                                    color: Color(0xff2D0C57),
+                                  ),
                                 ),
-                                Text(itemname.price,
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 18)),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Container(
-                                      height: 40,
-                                      width: 78,
-                                      child: Icon(CupertinoIcons.heart),
-                                      decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Colors.black),
-                                          borderRadius:
-                                              BorderRadius.all(
-                                                  Radius.circular(10))),
-                                    ),
-                                    SizedBox(
-                                      width: 20,
-                                    ),
-                                    Container(
-                                      height: 40,
-                                      width: 78,
-                                      child: Icon(CupertinoIcons.cart),
-                                      decoration: BoxDecoration(
-                                          color: Colors.blue,
-                                          border: Border.all(
-                                              color: Colors.black),
-                                          borderRadius:
-                                              BorderRadius.all(
-                                                  Radius.circular(10))),
-                                    ),
-                                  ],
+                                SizedBox(height: 12,),
+                                Text(
+                                  itemname.price,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                      fontSize: 22,
+                                      color: Color(0xff2D0C57),
+                                  ),
+                                ),
+                                SizedBox(height: 18,),
+                                Padding(
+                                  padding: const EdgeInsets.only(bottom: 16.0),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        height: 40,
+                                        width: 78,
+                                        child: Icon(CupertinoIcons.heart),
+                                        decoration: BoxDecoration(
+                                            border: Border.all(
+                                              color: Color(0xffD9D0E3),
+                                            ),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10))),
+                                      ),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      Container(
+                                        height: 40,
+                                        width: 78,
+                                        child: Icon(CupertinoIcons.cart),
+                                        decoration: BoxDecoration(
+                                            color: Color(0xff0BCE83),
+                                            border: Border.all(
+                                              color: Color(0xffD9D0E3),
+                                            ),
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(10))),
+                                      ),
+                                    ],
+                                  ),
                                 )
                               ],
                             ),

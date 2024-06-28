@@ -25,39 +25,47 @@ class Checkout extends StatelessWidget {
               children: [
                 Text(
                   'Payment method',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
                 ),
-                Text('CHANGE'),
+                Text('CHANGE',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                ),
               ],
             ),
-            SizedBox(height: 8, ),
+            SizedBox(height: 8,),
             Row(
               children: [
                 Icon(Icons.credit_card),
-                SizedBox(width: 8,),
-                Text('**** **** **** 4747'),
+                SizedBox(width: 25,),
+                Text('**** **** **** 4747',
+                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),),
               ],
             ),
             SizedBox(height: 20,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Delivery address', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600)),
-                Text('CHANGE'),
+                Text('Delivery address',
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),),
+                Text('CHANGE',
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),),
               ],
             ),
-            SizedBox(height: 8,),
+            SizedBox(height: 25,),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Icon(Icons.home_outlined),
+                SizedBox(width: 25,),
                 Container(
-                  width: 300,
+                  width: 197,
+                  height: 127,
                   child: Text('Alexandra Smith \n'
-                      'cesu 31 k-2 5.st, SIA Chili \n'
-                      'Riga \n'
-                      'LV-1012 \n'
-                      'Latvia'),
+                      'cesu 31 k-2 5.st, SIA Chili'
+                      'Riga\n'
+                      'LV-1012\n'
+                      'Latvia',
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400, color: Color(0xff9586A8)),),
                 )
               ],
             ),
