@@ -80,16 +80,20 @@ class _VegetablesState extends State<Vegetables> {
                                     color: Color(0xff2D0C57),
                                   ),
                                 ),
-                                SizedBox(height: 12,),
+                                SizedBox(
+                                  height: 12,
+                                ),
                                 Text(
                                   itemname.price,
                                   style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 22,
-                                      color: Color(0xff2D0C57),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 22,
+                                    color: Color(0xff2D0C57),
                                   ),
                                 ),
-                                SizedBox(height: 18,),
+                                SizedBox(
+                                  height: 18,
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.only(bottom: 16.0),
                                   child: Row(
@@ -99,7 +103,10 @@ class _VegetablesState extends State<Vegetables> {
                                       Container(
                                         height: 40,
                                         width: 78,
-                                        child: Icon(CupertinoIcons.heart),
+                                        child: Icon(
+                                          CupertinoIcons.heart,
+                                          color: Color(0xff9586a8),
+                                        ),
                                         decoration: BoxDecoration(
                                             border: Border.all(
                                               color: Color(0xffD9D0E3),
@@ -113,7 +120,7 @@ class _VegetablesState extends State<Vegetables> {
                                       Container(
                                         height: 40,
                                         width: 78,
-                                        child: Icon(CupertinoIcons.cart),
+                                        child: Icon(CupertinoIcons.cart, color: Colors.white,),
                                         decoration: BoxDecoration(
                                             color: Color(0xff0BCE83),
                                             border: Border.all(
