@@ -22,7 +22,7 @@ class Veginfo extends StatelessWidget {
                 color: Colors.deepPurple[100],
               ),
               child: Padding(
-                padding: const EdgeInsets.all(15.0),
+                padding: const EdgeInsets.all(20.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -32,7 +32,7 @@ class Veginfo extends StatelessWidget {
                     Text(
                       'Romaine Lettuce',
                       style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 30),
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 30),
                     ),
                     SizedBox(
                       height: 20,
@@ -40,7 +40,7 @@ class Veginfo extends StatelessWidget {
                     Text(
                       "1.10€/kg",
                       style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 32),
                     ),
                     SizedBox(
                       height: 20,
@@ -48,18 +48,18 @@ class Veginfo extends StatelessWidget {
                     Text(
                       '~ 150 gr / piece',
                       style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 18, color: Colors.teal),
+                          TextStyle(fontWeight: FontWeight.w500, fontSize: 17, color: Colors.teal),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 32,
                     ),
                     Text(
                       'Spain',
                       style:
-                          TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+                          TextStyle(fontWeight: FontWeight.w700, fontSize: 22),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 16,
                     ),
                     Text(
                       'Lettuce is an annual plant of the daisy family, Asteraceae. It is most often grown as a leaf '
@@ -67,49 +67,46 @@ class Veginfo extends StatelessWidget {
                       'although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can '
                       'also be grilled.',
                       style:
-                          TextStyle(fontWeight: FontWeight.w300, fontSize: 18),
+                          TextStyle(fontWeight: FontWeight.w400, fontSize: 17),
                     ),
                     SizedBox(
-                      height: 20,
+                      height: 56,
                     ),
-                    Container(
-                      height: 50,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Container(
-                            height: 50,
-                            width: 80,
-                            child: Icon(CupertinoIcons.heart),
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          height: 56,
+                          width: 78,
+                          child: Icon(CupertinoIcons.heart),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          height: 56,
+                          width: 275,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(CupertinoIcons.cart),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text('ADD TO CART'),
+                            ],
                           ),
-                          SizedBox(
-                            width: 15,
-                          ),
-                          Container(
-                            height: 50,
-                            width: 250,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(CupertinoIcons.cart),
-                                SizedBox(
-                                  width: 10,
-                                ),
-                                Text('ADD TO CART'),
-                              ],
-                            ),
-                            decoration: BoxDecoration(
-                                color: Colors.blue,
-                                border: Border.all(color: Colors.black),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(10))),
-                          ),
-                        ],
-                      ),
+                          decoration: BoxDecoration(
+                              color: Colors.blue,
+                              border: Border.all(color: Colors.black),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                        ),
+                      ],
                     ),
                   ],
                 ),
