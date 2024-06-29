@@ -16,7 +16,9 @@ class Categories extends StatelessWidget {
     final double itemWidth = size.width / 2;
 
     return Scaffold(
+      backgroundColor: Color(0xfff6f5f5),
       appBar: AppBar(
+        backgroundColor: Color(0xfff6f5f5),
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(CupertinoIcons.back),
@@ -29,7 +31,7 @@ class Categories extends StatelessWidget {
           children: [
             Text(
               'Categories',
-              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700, color: Color(0xff2D0C57),),
             ),
             SearchBar(
               leading: Icon(Icons.search),
@@ -54,7 +56,10 @@ class Categories extends StatelessWidget {
                       width: 50,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
-                        color: Colors.deepPurple[100],
+                        color: Color(0xffffffff),
+                        border: Border.all(
+                          color: Color(0xffD9D0E3),
+                        ),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.stretch,

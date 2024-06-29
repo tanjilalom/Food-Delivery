@@ -16,7 +16,9 @@ class _VegetablesState extends State<Vegetables> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff6f5f5),
       appBar: AppBar(
+        backgroundColor: Color(0xfff6f5f5),
         leading: IconButton(
           onPressed: () => Get.back(),
           icon: Icon(CupertinoIcons.back),
@@ -29,7 +31,7 @@ class _VegetablesState extends State<Vegetables> {
           children: [
             Text(
               'Vegetables',
-              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700),
+              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700, color: Color(0xff2D0C57),),
             ),
             SearchBar(
               leading: Icon(Icons.search),
@@ -83,13 +85,25 @@ class _VegetablesState extends State<Vegetables> {
                                 SizedBox(
                                   height: 12,
                                 ),
-                                Text(
-                                  itemname.price,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w700,
-                                    fontSize: 22,
-                                    color: Color(0xff2D0C57),
-                                  ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      itemname.price,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 22,
+                                        color: Color(0xff2D0C57),
+                                      ),
+                                    ),
+                                    Text(
+                                      itemname.amount,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16,
+                                        color: Color(0xff9586a8),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                                 SizedBox(
                                   height: 18,
