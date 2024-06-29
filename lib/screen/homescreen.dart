@@ -30,14 +30,16 @@ class _homepageState extends State<homepage> {
         child: Scaffold(
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: _currentindex,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
             items: [
               BottomNavigationBarItem(
                   backgroundColor: Colors.pinkAccent,
-                  icon: Icon(Icons.home), label: "Home"),
+                  icon: Icon(Icons.home), label: ''),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: "Checkout"),
+                  icon: Icon(Icons.shopping_cart), label:''),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label: "Profile"),
+                  icon: Icon(Icons.person), label:''),
             ],
             onTap: (index) {
               setState(() {

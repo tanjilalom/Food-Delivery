@@ -31,10 +31,23 @@ class Categories extends StatelessWidget {
           children: [
             Text(
               'Categories',
-              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700, color: Color(0xff2D0C57),),
+              style: TextStyle(
+                fontSize: 34,
+                fontWeight: FontWeight.w700,
+                color: Color(0xff2D0C57),
+              ),
             ),
-            SearchBar(
-              leading: Icon(Icons.search),
+            SizedBox(height: 15,),
+            TextFormField(
+              onTapOutside: (event) => FocusScope.of(context).unfocus(),
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                prefixIcon: Icon(Icons.search),
+                hintText: 'Search',
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(27),
+                ),
+              ),
             ),
             SizedBox(
               height: 30,
@@ -92,8 +105,8 @@ class Categories extends StatelessWidget {
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 16.0),
-                            child: Text('('+
-                              itemname.stock.toString()+')',
+                            child: Text(
+                              '(' + itemname.stock.toString() + ')',
                               style: TextStyle(
                                   fontSize: 12, fontWeight: FontWeight.w400),
                             ),

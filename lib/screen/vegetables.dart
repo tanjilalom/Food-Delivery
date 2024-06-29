@@ -33,8 +33,17 @@ class _VegetablesState extends State<Vegetables> {
               'Vegetables',
               style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700, color: Color(0xff2D0C57),),
             ),
-            SearchBar(
-              leading: Icon(Icons.search),
+            SizedBox(height: 15,),
+            TextFormField(
+              onTapOutside: (event) => FocusScope.of(context).unfocus(),
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                prefixIcon: Icon(Icons.search),
+                hintText: 'Search',
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(27),
+                ),
+              ),
             ),
             SizedBox(
               height: 30,
