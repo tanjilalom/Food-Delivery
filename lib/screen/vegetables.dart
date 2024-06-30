@@ -20,7 +20,9 @@ class _VegetablesState extends State<Vegetables> {
       appBar: AppBar(
         backgroundColor: Color(0xfff6f5f5),
         leading: IconButton(
-          onPressed: () => Get.back(),
+          onPressed: () {
+            Get.back();
+          },
           icon: Icon(CupertinoIcons.back),
         ),
       ),
@@ -31,9 +33,15 @@ class _VegetablesState extends State<Vegetables> {
           children: [
             Text(
               'Vegetables',
-              style: TextStyle(fontSize: 34, fontWeight: FontWeight.w700, color: Color(0xff2D0C57),),
+              style: TextStyle(
+                fontSize: 34,
+                fontWeight: FontWeight.w700,
+                color: Color(0xff2D0C57),
+              ),
             ),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             TextFormField(
               onTapOutside: (event) => FocusScope.of(context).unfocus(),
               decoration: InputDecoration(
@@ -60,10 +68,13 @@ class _VegetablesState extends State<Vegetables> {
                   return Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: InkWell(
-                      onTap: (){
-                        Navigator.push(context, CupertinoPageRoute(builder: (context) => Veginfo()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Veginfo()));
                       },
-                          //() => Get.to(Veginfo()),
+                      //() => Get.to(Veginfo()),
                       child: Container(
                         height: 160,
                         child: Row(
@@ -123,7 +134,8 @@ class _VegetablesState extends State<Vegetables> {
                                     height: 18,
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.only(bottom: 16.0),
+                                    padding:
+                                        const EdgeInsets.only(bottom: 16.0),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -133,9 +145,12 @@ class _VegetablesState extends State<Vegetables> {
                                             '',
                                             '',
                                             padding: EdgeInsets.only(top: 25),
-                                            titleText: Text('Added to Favourite',
+                                            titleText: Text(
+                                                'Added to Favourite',
                                                 style: TextStyle(
-                                                    fontSize: 18, fontWeight: FontWeight.w600),
+                                                    fontSize: 18,
+                                                    fontWeight:
+                                                        FontWeight.w600),
                                                 textAlign: TextAlign.center),
                                           ),
                                           child: Container(
@@ -163,13 +178,18 @@ class _VegetablesState extends State<Vegetables> {
                                             padding: EdgeInsets.only(top: 25),
                                             titleText: Text('Added to Cart',
                                                 style: TextStyle(
-                                                    fontSize: 18, fontWeight: FontWeight.w600),
+                                                    fontSize: 18,
+                                                    fontWeight:
+                                                        FontWeight.w600),
                                                 textAlign: TextAlign.center),
                                           ),
                                           child: Container(
                                             height: 40,
                                             width: 78,
-                                            child: Icon(CupertinoIcons.cart, color: Colors.white,),
+                                            child: Icon(
+                                              CupertinoIcons.cart,
+                                              color: Colors.white,
+                                            ),
                                             decoration: BoxDecoration(
                                                 color: Color(0xff0BCE83),
                                                 border: Border.all(

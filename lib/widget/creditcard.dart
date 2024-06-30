@@ -63,7 +63,7 @@ class _CreditCardState extends State<CreditCard> {
             top: 100,
             left: 50,
             child: Text(
-              //'XXXX XXXX XXXX XXXX',
+              //'XXXX XXXX XXXX XXXX'
               widget.cardnum,
               style: TextStyle(
                 fontSize: 26,
