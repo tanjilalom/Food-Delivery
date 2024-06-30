@@ -115,15 +115,15 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            Expanded(
+            SizedBox(
+              height: 180,
               child: ListView.builder(
-                  itemCount: 3,
+                  itemCount: delivery.length,
                   itemBuilder: (BuildContext context, int index) {
-                    //var itemname2 = delivery[index];
+                    var itemname = delivery[index];
                     return ListTile(
-                      leading: Icon(Icons.man),
-                      title: Text("I'll Pick it up myself",),
-
+                      leading: itemname.icon,
+                      title: Text(itemname.text),
                     );
                   }),
             ),

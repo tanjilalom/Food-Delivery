@@ -1,50 +1,104 @@
+import 'package:deliveryapp_ui/widget/textfield_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class CreditCard extends StatelessWidget {
+class CreditCard extends StatefulWidget {
+  CreditCard({
+    required this.cardnum,
+    required this.cardname,
+    required this.carddate,
+  });
+
+  String cardnum;
+  String cardname;
+  String carddate;
+
+  @override
+  State<CreditCard> createState() => _CreditCardState();
+}
+
+class _CreditCardState extends State<CreditCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.sizeOf(context).width,
-      height: 200,
+      height: 240,
       decoration: BoxDecoration(
-        color: Colors.blueGrey[300],
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(8),
+        gradient: LinearGradient(
+          begin: Alignment.centerLeft,
+          end: Alignment.center,
+          colors: [
+            Color(0xffb993d6),
+            Color(0xff8ca6db),
+          ],
+        ),
       ),
-      child: Column(
+      child: Stack(
+        //clipBehavior: Clip.none,
         children: [
-          SizedBox(height: 55,),
-          Padding(
-            padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
+          Positioned(
+            top: -50,
+            right: -100,
+            child: Container(
+              height: 331,
+              width: 335,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+                shape: BoxShape.circle,
+              ),
+            ),
+          ),
+
+          Positioned(
+            top: 20,
+            right: 25,
+            child: Image.asset(
+              'assets/bank_logo.png',
+              height: 60,
+              alignment: Alignment.topRight,
+            ),
+          ),
+
+          Positioned(
+            top: 100,
+            left: 50,
             child: Text(
-              '**** **** **** 1234',
+              //'XXXX XXXX XXXX XXXX',
+              widget.cardnum,
               style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
+                fontSize: 26,
+                fontWeight: FontWeight.w400,
                 color: Colors.white,
               ),
             ),
           ),
-          SizedBox(height: 35,),
-          Padding(
-            padding: EdgeInsets.only(left: 30, right: 30),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  'John Doe',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-                Text(
-                  '02/2025',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                  ),
-                ),
-              ],
+
+          Positioned(
+            left: 25,
+            bottom: 35,
+            child: Text(
+              //'Name Of The card',
+              widget.cardname,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
+            ),
+          ),
+
+          Positioned(
+            right: 25,
+            bottom: 35,
+            child: Text(
+              //'12/23',
+              widget.carddate,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
             ),
           ),
         ],
