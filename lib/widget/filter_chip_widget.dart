@@ -23,12 +23,14 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
     Friend("Cucumber and tomato", Colors.white, false),
     Friend("Onions and garlic", Colors.white, false),
     Friend("Peppers", Colors.white, false),
+    Friend("Potatos", Colors.white, false),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 8,
+      spacing: 8.0,
+      runSpacing: 5.0,
       children: getFilteredFriend(),
     );
   }
@@ -36,22 +38,23 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
   List<Widget> getFilteredFriend() {
     List<Widget> chips = [];
     for (int i = 0; i < friends.length; i++) {
-      Widget item = Padding(
-        padding: EdgeInsets.symmetric(
-          vertical: 5,
-          horizontal: 10,
+      Widget item = FilterChip(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(28),
         ),
-        child: FilterChip(
-          label: Text(friends[i].label),
-          labelStyle: TextStyle(color: Colors.deepPurple),
-          backgroundColor: friends[i].color,
-          selected: friends[i].isSelected,
-          onSelected: (value) {
-            setState(() {
-              friends[i].isSelected = value;
-            });
-          },
-        ),
+        label: Text(friends[i].label),
+        labelStyle: TextStyle(
+            color: Colors.deepPurple,
+            fontSize: 14,
+            fontWeight: FontWeight.w500),
+        backgroundColor: friends[i].color,
+        selected: friends[i].isSelected,
+        onSelected: (value) {
+          setState(() {
+            friends[i].isSelected = value;
+          });
+        },
+        selectedColor: Color(0xffe2cbff),
       );
       chips.add(item);
     }

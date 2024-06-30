@@ -43,6 +43,9 @@ class _VegetablesState extends State<Vegetables> {
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(27),
                 ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(27),
+                ),
               ),
             ),
             SizedBox(

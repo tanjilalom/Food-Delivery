@@ -9,12 +9,6 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
-    /*24 is for notification bar on Android*/
-    final double itemHeight = (size.height - kToolbarHeight - 24) / 2;
-    final double itemWidth = size.width / 2;
-
     return Scaffold(
       backgroundColor: Color(0xfff6f5f5),
       appBar: AppBar(
@@ -46,6 +40,9 @@ class Categories extends StatelessWidget {
                 hintText: 'Search',
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(27),
+                ),
+                focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(27),
                 ),
               ),
             ),

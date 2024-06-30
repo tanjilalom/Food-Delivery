@@ -34,11 +34,17 @@ class _CheckoutState extends State<Checkout> {
               children: [
                 Text(
                   'Payment method',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff2D0C57)),
                 ),
                 Text(
                   'CHANGE',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff2D0C57)),
                 ),
               ],
             ),
@@ -53,7 +59,10 @@ class _CheckoutState extends State<Checkout> {
                 ),
                 Text(
                   '**** **** **** 4747',
-                  style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0xff9586A8)),
                 ),
               ],
             ),
@@ -65,11 +74,17 @@ class _CheckoutState extends State<Checkout> {
               children: [
                 Text(
                   'Delivery address',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff2D0C57)),
                 ),
                 Text(
                   'CHANGE',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff2D0C57)),
                 ),
               ],
             ),
@@ -106,12 +121,19 @@ class _CheckoutState extends State<Checkout> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Delivery options',
-                    style:
-                        TextStyle(fontSize: 22, fontWeight: FontWeight.w700)),
+                Text(
+                  'Delivery options',
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff2D0C57)),
+                ),
                 Text(
                   'CHANGE',
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600),
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xff2D0C57)),
                 ),
               ],
             ),
@@ -132,7 +154,10 @@ class _CheckoutState extends State<Checkout> {
               children: [
                 Text(
                   'Non-contact-delivery',
-                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.w700),
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.w700,
+                      color: Color(0xff2D0C57)),
                 ),
                 Switch(
                   // This bool value toggles the switch.
