@@ -57,7 +57,10 @@ class _VegetablesState extends State<Vegetables> {
                   return Padding(
                     padding: EdgeInsets.symmetric(vertical: 5),
                     child: InkWell(
-                      onTap: () => Get.to(Veginfo()),
+                      onTap: (){
+                        Navigator.push(context, CupertinoPageRoute(builder: (context) => Veginfo()));
+                      },
+                          //() => Get.to(Veginfo()),
                       child: Container(
                         height: 160,
                         child: Row(
@@ -123,7 +126,15 @@ class _VegetablesState extends State<Vegetables> {
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         InkWell(
-                                          onTap: (){},
+                                          onTap: () => Get.snackbar(
+                                            '',
+                                            '',
+                                            padding: EdgeInsets.only(top: 25),
+                                            titleText: Text('Added to Favourite',
+                                                style: TextStyle(
+                                                    fontSize: 18, fontWeight: FontWeight.w600),
+                                                textAlign: TextAlign.center),
+                                          ),
                                           child: Container(
                                             height: 40,
                                             width: 78,
@@ -143,7 +154,15 @@ class _VegetablesState extends State<Vegetables> {
                                           width: 20,
                                         ),
                                         InkWell(
-                                          onTap: (){},
+                                          onTap: () => Get.snackbar(
+                                            '',
+                                            '',
+                                            padding: EdgeInsets.only(top: 25),
+                                            titleText: Text('Added to Cart',
+                                                style: TextStyle(
+                                                    fontSize: 18, fontWeight: FontWeight.w600),
+                                                textAlign: TextAlign.center),
+                                          ),
                                           child: Container(
                                             height: 40,
                                             width: 78,

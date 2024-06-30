@@ -64,22 +64,25 @@ class Categories extends StatelessWidget {
                   var itemname = category[index];
                   return Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 100,
-                      width: 50,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: Color(0xffffffff),
-                        border: Border.all(
-                          color: Color(0xffD9D0E3),
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, CupertinoPageRoute(builder: (context) => Vegetables()));
+                      },
+                      //onTap: () => Get.to(Vegetables()),
+                      child: Container(
+                        height: 100,
+                        width: 50,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color(0xffffffff),
+                          border: Border.all(
+                            color: Color(0xffD9D0E3),
+                          ),
                         ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          Expanded(
-                            child: InkWell(
-                              onTap: () => Get.to(Vegetables()),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
                               child: ClipRRect(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
@@ -91,30 +94,30 @@ class Categories extends StatelessWidget {
                                 ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 16.0),
-                            child: Text(
-                              itemname.name,
-                              style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.w700),
+                            SizedBox(
+                              height: 10,
                             ),
-                          ),
-                          Padding(
-                            padding: EdgeInsets.only(left: 16.0),
-                            child: Text(
-                              '(' + itemname.stock.toString() + ')',
-                              style: TextStyle(
-                                  fontSize: 12, fontWeight: FontWeight.w400),
+                            Padding(
+                              padding: EdgeInsets.only(left: 16.0),
+                              child: Text(
+                                itemname.name,
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.w700),
+                              ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                        ],
+                            Padding(
+                              padding: EdgeInsets.only(left: 16.0),
+                              child: Text(
+                                '(' + itemname.stock.toString() + ')',
+                                style: TextStyle(
+                                    fontSize: 12, fontWeight: FontWeight.w400),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   );

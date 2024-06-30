@@ -103,7 +103,15 @@ class Veginfo extends StatelessWidget {
                   Row(
                     children: [
                       InkWell(
-                        onTap: () => Get.snackbar('', 'Added to Fav'),
+                        onTap: () => Get.snackbar(
+                          '',
+                          '',
+                          padding: EdgeInsets.only(top: 25),
+                          titleText: Text('Added to Favourite',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center),
+                        ),
                         child: Container(
                           height: 56,
                           width: 78,
@@ -120,32 +128,43 @@ class Veginfo extends StatelessWidget {
                       SizedBox(
                         width: 20,
                       ),
-                      Container(
-                        height: 56,
-                        width: 275,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              CupertinoIcons.cart,
-                              color: Colors.white,
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'ADD TO CART',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ],
+                      InkWell(
+                        onTap: () => Get.snackbar(
+                          '',
+                          '',
+                          padding: EdgeInsets.only(top: 25),
+                          titleText: Text('Added to Cart',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                              textAlign: TextAlign.center),
                         ),
-                        decoration: BoxDecoration(
-                            color: Color(0xff0BCE83),
-                            border: Border.all(
-                              color: Color(0xffD9D0E3),
-                            ),
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10))),
+                        child: Container(
+                          height: 56,
+                          width: 275,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                CupertinoIcons.cart,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                width: 10,
+                              ),
+                              Text(
+                                'ADD TO CART',
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ],
+                          ),
+                          decoration: BoxDecoration(
+                              color: Color(0xff0BCE83),
+                              border: Border.all(
+                                color: Color(0xffD9D0E3),
+                              ),
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(10))),
+                        ),
                       ),
                     ],
                   ),
