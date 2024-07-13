@@ -11,7 +11,6 @@ class Payment_page extends StatefulWidget {
 }
 
 class _Payment_pageState extends State<Payment_page> {
-
   TextEditingController cardnum = TextEditingController();
   TextEditingController cardname = TextEditingController();
   TextEditingController carddate = TextEditingController();

@@ -135,27 +135,24 @@ class _VegetablesState extends State<Vegetables> {
                                   ),
                                   Padding(
                                     padding:
-                                    const EdgeInsets.only(bottom: 16.0),
+                                        const EdgeInsets.only(bottom: 16.0),
                                     child: Row(
                                       mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         InkWell(
-                                          onTap: () =>
-                                              Get.snackbar(
-                                                '',
-                                                '',
-                                                padding: EdgeInsets.only(
-                                                    top: 25),
-                                                titleText: Text(
-                                                    'Added to Favourite',
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
+                                          onTap: () => Get.snackbar(
+                                            '',
+                                            '',
+                                            padding: EdgeInsets.only(top: 25),
+                                            titleText: Text(
+                                                'Added to Favourite',
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight:
                                                         FontWeight.w600),
-                                                    textAlign: TextAlign
-                                                        .center),
-                                              ),
+                                                textAlign: TextAlign.center),
+                                          ),
                                           child: Container(
                                             height: 40,
                                             width: 78,
@@ -175,20 +172,17 @@ class _VegetablesState extends State<Vegetables> {
                                           width: 20,
                                         ),
                                         InkWell(
-                                          onTap: () =>
-                                              Get.snackbar(
-                                                '',
-                                                '',
-                                                padding: EdgeInsets.only(
-                                                    top: 25),
-                                                titleText: Text('Added to Cart',
-                                                    style: TextStyle(
-                                                        fontSize: 18,
-                                                        fontWeight:
+                                          onTap: () => Get.snackbar(
+                                            '',
+                                            '',
+                                            padding: EdgeInsets.only(top: 25),
+                                            titleText: Text('Added to Cart',
+                                                style: TextStyle(
+                                                    fontSize: 18,
+                                                    fontWeight:
                                                         FontWeight.w600),
-                                                    textAlign: TextAlign
-                                                        .center),
-                                              ),
+                                                textAlign: TextAlign.center),
+                                          ),
                                           child: Container(
                                             height: 40,
                                             width: 78,

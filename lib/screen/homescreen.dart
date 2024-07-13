@@ -3,24 +3,20 @@ import 'package:deliveryapp_ui/screen/checkout.dart';
 import 'package:deliveryapp_ui/screen/payment.dart';
 import 'package:flutter/material.dart';
 
-
 class homepage extends StatefulWidget {
   const homepage({super.key});
+
   @override
   State<homepage> createState() => _homepageState();
 }
 
 class _homepageState extends State<homepage> {
-
-
-
   var _currentindex = 0;
   final pages = [
     Categories(),
     Checkout(),
     Payment_page(),
   ];
-
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +31,11 @@ class _homepageState extends State<homepage> {
             items: [
               BottomNavigationBarItem(
                   backgroundColor: Colors.pinkAccent,
-                  icon: Icon(Icons.home), label: ''),
+                  icon: Icon(Icons.home),
+                  label: ''),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label:''),
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.person), label:''),
+                  icon: Icon(Icons.shopping_cart), label: ''),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
             ],
             onTap: (index) {
               setState(() {

@@ -31,7 +31,9 @@ class Categories extends StatelessWidget {
                 color: Color(0xff2D0C57),
               ),
             ),
-            SizedBox(height: 15,),
+            SizedBox(
+              height: 15,
+            ),
             TextFormField(
               onTapOutside: (event) => FocusScope.of(context).unfocus(),
               decoration: InputDecoration(
@@ -42,7 +44,7 @@ class Categories extends StatelessWidget {
                   borderRadius: BorderRadius.circular(27),
                 ),
                 focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(27),
+                  borderRadius: BorderRadius.circular(27),
                 ),
               ),
             ),
@@ -62,8 +64,11 @@ class Categories extends StatelessWidget {
                   return Padding(
                     padding: EdgeInsets.all(8.0),
                     child: InkWell(
-                      onTap: (){
-                        Navigator.push(context, CupertinoPageRoute(builder: (context) => Vegetables()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            CupertinoPageRoute(
+                                builder: (context) => Vegetables()));
                       },
                       //onTap: () => Get.to(Vegetables()),
                       child: Container(
