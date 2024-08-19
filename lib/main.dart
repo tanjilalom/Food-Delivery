@@ -1,5 +1,5 @@
-import 'package:deliveryapp_ui/screen/homescreen.dart';
-import 'package:deliveryapp_ui/screen/splashscreen.dart';
+import 'package:food_delivery_app/screen/homescreen.dart';
+import 'package:food_delivery_app/screen/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

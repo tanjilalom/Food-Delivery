@@ -1,5 +1,5 @@
-import 'package:deliveryapp_ui/widget/creditcard.dart';
-import 'package:deliveryapp_ui/widget/textfield_widget.dart';
+import 'package:food_delivery_app/widget/creditcard.dart';
+import 'package:food_delivery_app/widget/textfield_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

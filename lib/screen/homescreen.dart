@@ -1,6 +1,6 @@
-import 'package:deliveryapp_ui/screen/categories.dart';
-import 'package:deliveryapp_ui/screen/checkout.dart';
-import 'package:deliveryapp_ui/screen/payment.dart';
+import 'package:food_delivery_app/screen/categories.dart';
+import 'package:food_delivery_app/screen/checkout.dart';
+import 'package:food_delivery_app/screen/payment.dart';
 import 'package:flutter/material.dart';
 
 class homepage extends StatefulWidget {

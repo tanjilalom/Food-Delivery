@@ -1,4 +1,4 @@
-import 'package:deliveryapp_ui/model/delivery_model.dart';
+import 'package:food_delivery_app/model/delivery_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

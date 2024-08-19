@@ -1,4 +1,4 @@
-import 'package:deliveryapp_ui/widget/textfield_widget.dart';
+import 'package:food_delivery_app/widget/textfield_widget.dart';
 import 'package:flutter/material.dart';
 
 class CreditCard extends StatefulWidget {

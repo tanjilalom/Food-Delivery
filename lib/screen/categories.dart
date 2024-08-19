@@ -1,5 +1,5 @@
-import 'package:deliveryapp_ui/model/category_model.dart';
-import 'package:deliveryapp_ui/screen/vegetables.dart';
+import 'package:food_delivery_app/model/category_model.dart';
+import 'package:food_delivery_app/screen/vegetables.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

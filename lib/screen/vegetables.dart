@@ -1,6 +1,6 @@
-import 'package:deliveryapp_ui/model/vegname_model.dart';
-import 'package:deliveryapp_ui/screen/veginfo.dart';
-import 'package:deliveryapp_ui/widget/filter_chip_widget.dart';
+import 'package:food_delivery_app/model/vegname_model.dart';
+import 'package:food_delivery_app/screen/veginfo.dart';
+import 'package:food_delivery_app/widget/filter_chip_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
