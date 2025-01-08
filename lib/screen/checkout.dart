@@ -12,24 +12,25 @@ class Checkout extends StatefulWidget {
 
 class _CheckoutState extends State<Checkout> {
   bool isSwitched = false;
-  bool isSelected = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout'),
+        title: const Text('Checkout'),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => Get.back(),
-          icon: Icon(CupertinoIcons.back),
+          icon: const Icon(CupertinoIcons.back),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
+            // Payment method section
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -48,15 +49,11 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 8,
-            ),
-            Row(
+            const SizedBox(height: 8),
+            const Row(
               children: [
                 Icon(Icons.credit_card),
-                SizedBox(
-                  width: 25,
-                ),
+                SizedBox(width: 15),
                 Text(
                   '**** **** **** 4747',
                   style: TextStyle(
@@ -66,10 +63,10 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
+            const SizedBox(height: 20),
+
+            // Delivery address section
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -88,37 +85,27 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(
-              height: 25,
-            ),
+            const SizedBox(height: 16),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Icon(Icons.home_outlined),
-                SizedBox(
-                  width: 25,
-                ),
-                Container(
-                  width: 197,
-                  height: 127,
+                SizedBox(width: 15),
+                Expanded(
                   child: Text(
-                    'Alexandra Smith \n'
-                    'cesu 31 k-2 5.st, SIA Chili'
-                    'Riga\n'
-                    'LV-1012\n'
-                    'Latvia',
+                    'Alexandra Smith\ncesu 31 k-2 5.st, SIA Chili\nRiga\nLV-1012\nLatvia',
                     style: TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w400,
                         color: Color(0xff9586A8)),
                   ),
-                )
+                ),
               ],
             ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
+            const SizedBox(height: 20),
+
+            // Delivery options section
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -137,22 +124,28 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
+            const SizedBox(height: 16),
             SizedBox(
               height: 180,
               child: ListView.builder(
-                  itemCount: delivery.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    var itemname = delivery[index];
-                    return ListTile(
-                      leading: itemname.icon,
-                      title: Text(itemname.text),
-                    );
-                  }),
+                itemCount: delivery.length,
+                itemBuilder: (BuildContext context, int index) {
+                  var itemname = delivery[index];
+                  return ListTile(
+                    leading: itemname.icon,
+                    title: Text(itemname.text),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 8),
+                  );
+                },
+              ),
             ),
+            const SizedBox(height: 20),
+
+            // Non-contact delivery switch
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Non-contact-delivery',
                   style: TextStyle(
                       fontSize: 22,
@@ -160,7 +153,6 @@ class _CheckoutState extends State<Checkout> {
                       color: Color(0xff2D0C57)),
                 ),
                 Switch(
-                  // This bool value toggles the switch.
                   value: isSwitched,
                   activeColor: Colors.deepPurple[100],
                   onChanged: (value) {
@@ -168,7 +160,7 @@ class _CheckoutState extends State<Checkout> {
                       isSwitched = value;
                     });
                   },
-                )
+                ),
               ],
             ),
           ],
