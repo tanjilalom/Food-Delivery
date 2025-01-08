@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class textfieldwidget extends StatelessWidget {
   textfieldwidget({
@@ -17,7 +18,7 @@ class textfieldwidget extends StatelessWidget {
   final double width;
   final double height;
   final bool? isSuffixIcon;
-  final IconData? icon;
+  final SvgPicture? icon;
   final TextEditingController controller;
   final List<TextInputFormatter>? inputFormatters; // Add this line
 
@@ -36,7 +37,7 @@ class textfieldwidget extends StatelessWidget {
             // Pass inputFormatters here
             onTapOutside: (event) => FocusScope.of(context).unfocus(),
             decoration: InputDecoration(
-              suffixIcon: isSuffixIcon == true ? Icon(icon) : null,
+              suffixIcon: isSuffixIcon == true ? icon : null,
               contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),

@@ -15,9 +15,9 @@ class _homepageState extends State<homepage> {
   var _currentindex = 0;
 
   final pages = [
-    Categories(),
-    Checkout(),
-    PaymentPage(),
+    const Categories(),
+    const Checkout(),
+    const PaymentPage(),
   ];
 
   @override

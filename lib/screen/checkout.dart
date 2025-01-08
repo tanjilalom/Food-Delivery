@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Checkout extends StatefulWidget {
-  Checkout({super.key});
+  const Checkout({super.key});
 
   @override
   State<Checkout> createState() => _CheckoutState();
@@ -18,20 +18,20 @@ class _CheckoutState extends State<Checkout> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Checkout'),
+        title: const Text('Checkout'),
         centerTitle: true,
         leading: IconButton(
           onPressed: () => Get.back(),
-          icon: Icon(CupertinoIcons.back),
+          icon: const Icon(CupertinoIcons.back),
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Payment method section
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -50,15 +50,15 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Row(
               children: [
                 SvgPicture.asset(
                   'assets/icons/credit-card.svg',
                   height: 20.0,
                 ),
-                SizedBox(width: 15),
-                Text(
+                const SizedBox(width: 15),
+                const Text(
                   '**** **** **** 4747',
                   style: TextStyle(
                       fontSize: 17,
@@ -67,10 +67,10 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Delivery address section
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -89,7 +89,7 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -97,10 +97,10 @@ class _CheckoutState extends State<Checkout> {
                   'assets/icons/home.svg',
                   height: 20.0,
                 ),
-                SizedBox(width: 15),
+                const SizedBox(width: 15),
                 Expanded(
                   child: RichText(
-                    text: TextSpan(
+                    text: const TextSpan(
                       children: [
                         TextSpan(
                           text: 'Alexandra Smith\n',
@@ -149,10 +149,10 @@ class _CheckoutState extends State<Checkout> {
               ],
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Delivery options section
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
@@ -171,31 +171,31 @@ class _CheckoutState extends State<Checkout> {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             SizedBox(
               height: 160,
               child: ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: delivery.length,
                 itemBuilder: (BuildContext context, int index) {
                   var itemname = delivery[index];
                   return ListTile(
                     leading: itemname.icon, // SvgPicture, not Icon
                     title: Text(itemname.text),
-                    contentPadding: EdgeInsets.symmetric(vertical: 2),
+                    contentPadding: const EdgeInsets.symmetric(vertical: 2),
                   );
                 },
               ),
             ),
 
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
 
             // Non-contact delivery switch
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Non-contact-delivery',
                   style: TextStyle(
                       fontSize: 22,

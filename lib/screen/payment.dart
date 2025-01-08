@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:food_delivery_app/widget/creditcard.dart';
 import 'package:food_delivery_app/widget/textfield_widget.dart';
@@ -75,8 +76,7 @@ class _PaymentPageState extends State<PaymentPage> {
                 onPressed: () {
                   // Camera functionality
                 },
-                icon: const Icon(Icons.camera_alt,
-                    size: 28, color: Colors.black54),
+                icon: SvgPicture.asset('assets/icons/camera.svg', height: 30.0),
               ),
             ),
             const SizedBox(height: 20),
@@ -99,7 +99,10 @@ class _PaymentPageState extends State<PaymentPage> {
                 _CardNumberInputFormatter(),
               ],
               isSuffixIcon: true,
-              icon: Icons.credit_card,
+              icon: SvgPicture.asset(
+                'assets/icons/credit-card.svg',
+                height: 20.0,
+              ),
             ),
             const SizedBox(height: 20),
             Row(
