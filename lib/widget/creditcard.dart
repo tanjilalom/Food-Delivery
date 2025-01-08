@@ -23,7 +23,7 @@ class _CreditCardState extends State<CreditCard> {
       height: 240,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
@@ -35,7 +35,7 @@ class _CreditCardState extends State<CreditCard> {
           BoxShadow(
             color: Colors.black.withOpacity(0.2),
             blurRadius: 8,
-            offset: Offset(0, 4),
+            offset: const Offset(0, 4),
           ),
         ],
       ),
@@ -94,7 +94,7 @@ class _CreditCardState extends State<CreditCard> {
             left: 50,
             child: Text(
               widget.cardnum.isEmpty ? 'XXXX XXXX XXXX XXXX' : widget.cardnum,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 22,
                 letterSpacing: 2,
                 fontWeight: FontWeight.w500,
@@ -118,10 +118,10 @@ class _CreditCardState extends State<CreditCard> {
                     color: Colors.white.withOpacity(0.7),
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   widget.cardname.isEmpty ? 'FULL NAME' : widget.cardname,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,
@@ -146,10 +146,10 @@ class _CreditCardState extends State<CreditCard> {
                     color: Colors.white.withOpacity(0.7),
                   ),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   widget.carddate.isEmpty ? 'MM/YY' : widget.carddate,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,
                     color: Colors.white,

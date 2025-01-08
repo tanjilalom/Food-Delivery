@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class FilterChipWidget extends StatefulWidget {
   const FilterChipWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<FilterChipWidget> createState() => _FilterChipWidgetState();
@@ -43,7 +43,7 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
           borderRadius: BorderRadius.circular(28),
         ),
         label: Text(friends[i].label),
-        labelStyle: TextStyle(
+        labelStyle: const TextStyle(
             color: Colors.deepPurple,
             fontSize: 14,
             fontWeight: FontWeight.w500),
@@ -54,7 +54,7 @@ class _FilterChipWidgetState extends State<FilterChipWidget> {
             friends[i].isSelected = value;
           });
         },
-        selectedColor: Color(0xffe2cbff),
+        selectedColor: const Color(0xffe2cbff),
       );
       chips.add(item);
     }

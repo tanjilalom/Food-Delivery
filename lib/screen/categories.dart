@@ -14,10 +14,10 @@ class Categories extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xfff6f5f5),
         elevation: 0,
-        leading: IconButton(
-          onPressed: () => Get.back(),
-          icon: const Icon(CupertinoIcons.back, color: Color(0xff2D0C57)),
-        ),
+        // leading: IconButton(
+        //   onPressed: () => Get.back(),
+        //   icon: const Icon(CupertinoIcons.back, color: Color(0xff2D0C57)),
+        // ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),

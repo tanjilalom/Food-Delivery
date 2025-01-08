@@ -1,135 +1,181 @@
-import 'package:food_delivery_app/widget/creditcard.dart';
-import 'package:food_delivery_app/widget/textfield_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class Payment_page extends StatefulWidget {
-  const Payment_page({super.key});
+import 'package:food_delivery_app/widget/creditcard.dart';
+import 'package:food_delivery_app/widget/textfield_widget.dart';
+
+class PaymentPage extends StatefulWidget {
+  const PaymentPage({Key? key}) : super(key: key);
 
   @override
-  State<Payment_page> createState() => _Payment_pageState();
+  State<PaymentPage> createState() => _PaymentPageState();
 }
 
-class _Payment_pageState extends State<Payment_page> {
-  TextEditingController cardnum = TextEditingController();
-  TextEditingController cardname = TextEditingController();
-  TextEditingController carddate = TextEditingController();
+class _PaymentPageState extends State<PaymentPage> {
+  final TextEditingController cardNumberController = TextEditingController();
+  final TextEditingController cardNameController = TextEditingController();
+  final TextEditingController expiryDateController = TextEditingController();
+  final TextEditingController cvcController = TextEditingController();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-
-    cardnum.addListener(updatecard);
-    cardname.addListener(updatecard);
-    carddate.addListener(updatecard);
+    cardNumberController.addListener(_updateCard);
+    cardNameController.addListener(_updateCard);
+    expiryDateController.addListener(_updateCard);
   }
 
-  void updatecard() {
+  void _updateCard() {
     setState(() {});
+  }
+
+  @override
+  void dispose() {
+    cardNumberController.dispose();
+    cardNameController.dispose();
+    expiryDateController.dispose();
+    cvcController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xfff6f5f5),
+      backgroundColor: const Color(0xfff6f5f5),
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
-          icon: Icon(CupertinoIcons.back),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(CupertinoIcons.back, color: Colors.black),
         ),
-        backgroundColor: Color(0xfff6f5f5),
+        backgroundColor: const Color(0xfff6f5f5),
+        elevation: 0,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Credit/Debit card',
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Credit/Debit Card',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            CreditCard(
+              cardnum: cardNumberController.text,
+              cardname: cardNameController.text,
+              carddate: expiryDateController.text,
+            ),
+            const SizedBox(height: 20),
+            Align(
+              alignment: Alignment.center,
+              child: IconButton(
+                onPressed: () {
+                  // Camera functionality
+                },
+                icon: const Icon(Icons.camera_alt,
+                    size: 28, color: Colors.black54),
               ),
-              CreditCard(
-                cardnum: cardnum.text,
-                cardname: cardname.text,
-                carddate: carddate.text,
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                width: 374,
-                child: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.camera_alt),
+            ),
+            const SizedBox(height: 20),
+            textfieldwidget(
+              title: 'Name on Card',
+              width: double.infinity,
+              height: 70,
+              controller: cardNameController,
+              inputFormatters: [],
+            ),
+            const SizedBox(height: 20),
+            textfieldwidget(
+              title: 'Card Number',
+              width: double.infinity,
+              height: 70,
+              controller: cardNumberController,
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(19),
+                FilteringTextInputFormatter.digitsOnly,
+                _CardNumberInputFormatter(),
+              ],
+              isSuffixIcon: true,
+              icon: Icons.credit_card,
+            ),
+            const SizedBox(height: 20),
+            Row(
+              children: [
+                Expanded(
+                  child: textfieldwidget(
+                    title: 'Expiry Date',
+                    width: double.infinity,
+                    height: 70,
+                    controller: expiryDateController,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(5),
+                    ],
+                  ),
                 ),
-              ),
-              textfieldwidget(
-                title: 'Name of the Card',
-                width: 374,
-                height: 70,
-                controller: cardname,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              textfieldwidget(
-                title: 'Card Number',
-                width: 374,
-                height: 70,
-                isSuffixIcon: true,
-                icon: Icons.credit_card,
-                controller: cardnum,
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Row(
-                children: [
-                  textfieldwidget(
-                    title: 'Expiry date',
-                    width: 176,
-                    height: 69,
-                    controller: carddate,
-                  ),
-                  SizedBox(
-                    width: 25,
-                  ),
-                  textfieldwidget(
+                const SizedBox(width: 16),
+                Expanded(
+                  child: textfieldwidget(
                     title: 'CVC',
-                    width: 176,
-                    height: 69,
-                    controller: cardnum,
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 35,
-              ),
-              Container(
-                height: 56,
-                width: 380,
-                child: Center(
-                  child: Text(
-                    'USE THIS CARD',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.white),
+                    width: double.infinity,
+                    height: 70,
+                    controller: cvcController,
+                    inputFormatters: [
+                      LengthLimitingTextInputFormatter(3),
+                    ],
                   ),
                 ),
-                decoration: BoxDecoration(
-                  color: Color(0xff0BCE83),
-                  border: Border.all(color: Color(0xffD9D0E3)),
-                  borderRadius: BorderRadius.all(Radius.circular(8)),
+              ],
+            ),
+            const SizedBox(height: 30),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Payment action
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff0BCE83),
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: const Text(
+                  'USE THIS CARD',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
+    );
+  }
+}
+
+/// Custom formatter to add a space after every 4 digits in a card number
+class _CardNumberInputFormatter extends TextInputFormatter {
+  @override
+  TextEditingValue formatEditUpdate(
+      TextEditingValue oldValue, TextEditingValue newValue) {
+    final newText = newValue.text.replaceAll(' ', '');
+    final buffer = StringBuffer();
+    for (int i = 0; i < newText.length; i++) {
+      buffer.write(newText[i]);
+      final isLastChar = i == newText.length - 1;
+      if ((i + 1) % 4 == 0 && !isLastChar) {
+        buffer.write(' '); // Add space after every 4 characters
+      }
+    }
+    return TextEditingValue(
+      text: buffer.toString(),
+      selection: TextSelection.collapsed(offset: buffer.length),
     );
   }
 }

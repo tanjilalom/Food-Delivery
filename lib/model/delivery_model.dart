@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 
 class delivarymodel {
-  Icon icon;
+  SvgPicture icon;
   String text;
 
   delivarymodel({
@@ -12,15 +13,24 @@ class delivarymodel {
 
 List<delivarymodel> delivery = [
   delivarymodel(
-    icon: const Icon(Icons.directions_walk),
+    icon: SvgPicture.asset(
+      'assets/icons/home.svg',
+      height: 20.0,
+    ),
     text: "I'll pick it up myself",
   ),
   delivarymodel(
-    icon: const Icon(Icons.directions_bike),
+    icon: SvgPicture.asset(
+      'assets/icons/home.svg',
+      height: 20.0,
+    ),
     text: 'By Courier',
   ),
   delivarymodel(
-    icon: const Icon(Icons.airplanemode_active),
+    icon: SvgPicture.asset(
+      'assets/icons/cycle.svg',
+      height: 20.0,
+    ),
     text: 'By Plane',
   ),
 ];

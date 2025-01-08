@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class textfieldwidget extends StatelessWidget {
   textfieldwidget({
@@ -9,6 +10,7 @@ class textfieldwidget extends StatelessWidget {
     this.icon,
     this.isSuffixIcon,
     required this.controller,
+    this.inputFormatters,
   });
 
   final String title;
@@ -16,13 +18,12 @@ class textfieldwidget extends StatelessWidget {
   final double height;
   final bool? isSuffixIcon;
   final IconData? icon;
-
-  TextEditingController controller;
-
+  final TextEditingController controller;
+  final List<TextInputFormatter>? inputFormatters; // Add this line
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       height: height,
       child: Column(
@@ -31,16 +32,17 @@ class textfieldwidget extends StatelessWidget {
           Text(title),
           TextFormField(
             controller: controller,
+            inputFormatters: inputFormatters,
+            // Pass inputFormatters here
             onTapOutside: (event) => FocusScope.of(context).unfocus(),
             decoration: InputDecoration(
-              suffixIcon:
-                  isSuffixIcon == true ? Icon(icon) : null,
-              contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+              suffixIcon: isSuffixIcon == true ? Icon(icon) : null,
+              contentPadding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            style: TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
+            style: const TextStyle(fontSize: 17, fontWeight: FontWeight.w400),
           ),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_delivery_app/screen/categories.dart';
 import 'package:food_delivery_app/screen/checkout.dart';
 import 'package:food_delivery_app/screen/payment.dart';
@@ -12,10 +13,11 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   var _currentindex = 0;
+
   final pages = [
     Categories(),
     Checkout(),
-    Payment_page(),
+    PaymentPage(),
   ];
 
   @override
@@ -31,11 +33,20 @@ class _homepageState extends State<homepage> {
             items: [
               BottomNavigationBarItem(
                   backgroundColor: Colors.pinkAccent,
-                  icon: Icon(Icons.home),
+                  icon: SvgPicture.asset(
+                    'assets/icons/home.svg',
+                    height: 20.0,
+                  ),
                   label: ''),
               BottomNavigationBarItem(
-                  icon: Icon(Icons.shopping_cart), label: ''),
-              BottomNavigationBarItem(icon: Icon(Icons.person), label: ''),
+                  icon: SvgPicture.asset(
+                    'assets/icons/shopping-cart.svg',
+                    height: 20.0,
+                  ), label: ''),
+              BottomNavigationBarItem(icon: SvgPicture.asset(
+                'assets/icons/user.svg',
+                height: 20.0,
+              ), label: ''),
             ],
             onTap: (index) {
               setState(() {
